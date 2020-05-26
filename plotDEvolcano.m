@@ -7,8 +7,8 @@ function plotDEvolcano
 % Run this function from inside the folder containing the CSV files
 % outputted by the DESeq2 analysis.
 
-%IMPORTANT: This function creates a plot for 6 samples. A lot of things are
-%hardcoded so this code will need to be modified for use with new samples.
+%IMPORTANT: Some things are hardcoded so this code will need to be modified
+%for use with new samples.
 
 %INPUT ARGUMENTS: None.
 
@@ -29,8 +29,8 @@ ax=gca;
 ax.XAxis.FontSize=12; %set x-axis fontsize.
 ax.YAxis.FontSize=12; %set y-axis fontsize.
 text(5.5,-log(0.03),'p=0.05','FontSize',12);
-text(0.63,24,'LFC=0.58','FontSize',12);
-text(-1.25,24,'LFC=-0.58','FontSize',12);
+text(0.63,32,'LFC=0.58','FontSize',12); %might need to adjust x and y values for your data.
+text(-1.33,32,'LFC=-0.58','FontSize',12); %might need to adjust x and y values for your data.
 
 %Plot data with p<0.05.
 data=readmatrix('Group_mutant_vs_wildtype_res05.csv');
@@ -56,7 +56,6 @@ lgd.FontSize=12;
 
 %Save figure.
 savefig(fig,'DE_volcano'); %save figure as a FIG file in the working directory.
-saveas(fig,'DE_volcano.png'); %save figure as a PNG file.
 fig.Renderer='painters'; %force MATLAB to render the image as a vector.
 saveas(fig,'DE_volcano.svg'); %save figure as an SVG file.
 close
@@ -76,8 +75,8 @@ ax=gca;
 ax.XAxis.FontSize=12; %set x-axis fontsize.
 ax.YAxis.FontSize=12; %set y-axis fontsize.
 text(5.5,-log(0.03),'p=0.05','FontSize',12);
-text(1.05,24,'LFC=1','FontSize',12);
-text(-1.47,24,'LFC=-1','FontSize',12);
+text(1.05,32,'LFC=1','FontSize',12); %might need to adjust x and y values for your data.
+text(-1.55,32,'LFC=-1','FontSize',12); %might need to adjust x and y values for your data.
 
 %Plot data with p<0.05.
 data=readmatrix('Group_mutant_vs_wildtype_res05.csv');
